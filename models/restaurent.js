@@ -1,5 +1,6 @@
 "use strict";
 const { Model } = require("sequelize");
+const { Sequelize } = require(".");
 module.exports = (sequelize, DataTypes) => {
   class restaurent extends Model {
     /**
@@ -22,14 +23,6 @@ module.exports = (sequelize, DataTypes) => {
       google_map: DataTypes.STRING,
       rating: DataTypes.STRING,
       description: DataTypes.STRING,
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
     },
     {
       sequelize,

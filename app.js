@@ -16,7 +16,8 @@ app.set("views", "./views");
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.redirect("/restaurants");
+  console.log(Object.values(restaurants).map((item) => item.name));
+  // res.redirect("/restaurants");
 });
 
 app.get("/restaurants", (req, res) => {
