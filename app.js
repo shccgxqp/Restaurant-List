@@ -1,8 +1,14 @@
 const express = require("express");
-const { engine } = require("express-handlebars");
+const methodOverride = require("method-override");
 const app = express();
+
+const db = require("./models");
+const Restaurant = db.restaurant;
+
 const port = 3000;
 const restaurants = require("./public/jsons/restaurant.json").results;
+
+const { engine } = require("express-handlebars");
 
 app.engine(".hbs", engine({ extname: ".hbs" }));
 app.set("view engine", ".hbs");
