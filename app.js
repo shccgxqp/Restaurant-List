@@ -9,7 +9,7 @@ const db = require("./models");
 const Restaurant = db.Restaurant;
 const { Op } = require("sequelize"); //sequelize Operators
 
-//method-override put & deleat
+//method-override -> put & deleat
 const methodOverride = require("method-override");
 
 //init
@@ -35,6 +35,10 @@ app.get("/restaurants", (req, res) => {
   }).then((item) => res.render("index", { restaurants: item, keyword }));
 });
 
+app.get("/restaurant/new", (req, res) => {
+  return res.render("new");
+});
+
 //ok
 app.get("/restaurant/:id", (req, res) => {
   const id = req.params.id;
@@ -51,12 +55,19 @@ app.get("/restaurant/:id/edit", (req, res) => {
   );
 });
 
-app.get("/restaurant/:id/new", (req, res) => {
-  return res.send("new");
-});
-
 app.post("/restaurant/", (req, res) => {
-  return res.send("post id");
+  const body = req.body;
+  return Restaurant.create({
+    name: body.name,
+    name_en: body.name_en,
+    category: body.category,
+    image: body.image,
+    location: body.location,
+    phone: body.phone,
+    google_map: body.google_map,
+    rating: body.rating,
+    description: body.description,
+  }).then(() => res.redirect("/restaurants"));
 });
 
 //ok
