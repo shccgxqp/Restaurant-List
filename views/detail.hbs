@@ -1,4 +1,4 @@
-<h1 class="mb-1 restaurant-show-title">{{restaurant.name}}</h1>
+<h1 class="mb-1 restaurant-show-title">{{restaurant.name}} <a href="/restaurants">Back</a></h1>
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
@@ -32,9 +32,7 @@
         {{restaurant.description}}
       </p>
 
-      <img class="rounded mx-auto d-block mb-4 w-100"
-        src="{{restaurant.image}}" alt="{{restaurant.name}}"
-        style="max-width: 600px;">
+      <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}" style="max-width: 600px;" />
     </div>
   </div>
 </div>
