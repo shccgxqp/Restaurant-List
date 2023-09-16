@@ -26,7 +26,13 @@ A web app that you can find some restaurants and search them with keywords.
    $ npm install
    ```
 
-4. Start the web app
+4. Install the sql seed
+
+   ```bash
+   $ npm run seed
+   ```
+
+5. Start the web app
 
    ```bash
    $ npm run start
