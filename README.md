@@ -1,6 +1,6 @@
 # Restaurant List
 
-![Restaurant home page](./public/image/restaurant_screen.jpg)
+![Restaurant home page](./public/image/restaurant_screen.jpeg)
 
 A web app that you can find some restaurants and search them with keywords.
 
@@ -17,7 +17,7 @@ A web app that you can find some restaurants and search them with keywords.
 2. Go to the project directory
 
    ```bash
-   $ cd My-Restaurant-List
+   $ cd RestaurantList
    ```
 
 3. Install the required npm packages
