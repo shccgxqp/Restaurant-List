@@ -1,74 +1,74 @@
-<div class="d-flex justify-content-center">
-  <form action="/restaurant" method="POST">
+<div class='d-flex justify-content-center'>
+  <form action='/restaurant' method='POST'>
 
-    <div class="input-group mb-3">
-      <label for="edit_name" class="input-group-text">餐廳名稱*</label>
-      <input type="name" name="name" id="edit_name" placeholder="實在好好吃餐廳" required />
+    <div class='input-group mb-3'>
+      <label for='edit_name' class='input-group-text'>餐廳名稱*</label>
+      <input type='name' name='name' id='edit_name' placeholder='實在好好吃餐廳' required />
     </div>
 
-    <div class="input-group mb-3">
-      <label for="edit_name_en" class="input-group-text">餐廳英文名稱*</label>
-      <input type="name" name="name_en" id="edit_name_en" placeholder="gooooooood food" required />
+    <div class='input-group mb-3'>
+      <label for='edit_name_en' class='input-group-text'>餐廳英文名稱*</label>
+      <input type='name' name='name_en' id='edit_name_en' placeholder='gooooooood food' required />
     </div>
 
-    <div class="input-group mb-3">
-      <label for="edit_category" class="input-group-text">餐廳類別*</label>
-      <select class="form-select" name="category" id="edit_category" required>
+    <div class='input-group mb-3'>
+      <label for='edit_category' class='input-group-text'>餐廳類別*</label>
+      <select class='form-select' name='category' id='edit_category' required>
         <option selected></option>
-        <option value="日本料理">日本料理</option>
-        <option value="義式餐廳">義式餐廳</option>
-        <option value="中東料理">中東料理</option>
-        <option value="美式">美式</option>
-        <option value="酒吧">酒吧</option>
-        <option value="咖啡">咖啡</option>
+        <option value='日本料理'>日本料理</option>
+        <option value='義式餐廳'>義式餐廳</option>
+        <option value='中東料理'>中東料理</option>
+        <option value='美式'>美式</option>
+        <option value='酒吧'>酒吧</option>
+        <option value='咖啡'>咖啡</option>
       </select>
     </div>
 
-    <div class="input-group mb-3">
-      <label for="edit_image" class="input-group-text">餐廳照片網址</label>
-      <input type="text" name="image" id="edit_image" placeholder="" />
+    <div class='input-group mb-3'>
+      <label for='edit_image' class='input-group-text'>餐廳照片網址</label>
+      <input type='text' name='image' id='edit_image' placeholder='' />
     </div>
 
-    <div class="input-group mb-3">
-      <label for="edit_location" class="input-group-text">餐廳地點</label>
-      <input type="text" name="location" id="edit_location" placeholder="美國市台北區印度街1號2F" />
+    <div class='input-group mb-3'>
+      <label for='edit_location' class='input-group-text'>餐廳地點</label>
+      <input type='text' name='location' id='edit_location' placeholder='美國市台北區印度街1號2F' />
     </div>
 
-    <div class="input-group mb-3">
-      <label for="edit_phone" class="input-group-text">餐廳電話</label>
-      <input type="text" name="phone" id="edit_phone" placeholder="02 2701 2345" />
+    <div class='input-group mb-3'>
+      <label for='edit_phone' class='input-group-text'>餐廳電話</label>
+      <input type='text' name='phone' id='edit_phone' placeholder='02 2701 2345' />
     </div>
 
-    <div class="input-group mb-3">
-      <label for="edit_google_map" class="input-group-text">Google_map</label>
-      <input type="text" name="google_map" id="edit_google_map" placeholder="我是誰 我在哪" />
+    <div class='input-group mb-3'>
+      <label for='edit_google_map' class='input-group-text'>Google_map</label>
+      <input type='text' name='google_map' id='edit_google_map' placeholder='我是誰 我在哪' />
     </div>
 
-    <div class="input-group mb-3">
-      <label for="edit_rating" class="input-group-text">餐廳評分</label>
+    <div class='input-group mb-3'>
+      <label for='edit_rating' class='input-group-text'>餐廳評分</label>
       <input
-        type="number"
-        name="rating"
-        id="edit_rating"
-        placeholder="4.5"
-        min="0"
-        max="5"
-        step="0.1"
+        type='number'
+        name='rating'
+        id='edit_rating'
+        placeholder='4.5'
+        min='0'
+        max='5'
+        step='0.1'
       />
     </div>
 
-    <div class="input-group">
-      <label for="edit_description" class="input-group-text">餐廳簡介</label>
+    <div class='input-group'>
+      <label for='edit_description' class='input-group-text'>餐廳簡介</label>
       <textarea
-        type="text"
-        name="description"
-        id="edit_description"
-        style="height: 150px"
+        type='text'
+        name='description'
+        id='edit_description'
+        style='height: 150px'
       ></textarea>
     </div>
 
-    <button type="submit">Save</button>
+    <button type='submit'>Save</button>
 
-    <a href="/restaurants">back</a>
+    <a href='/restaurants'>back</a>
   </form>
 </div>
