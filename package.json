@@ -1,13 +1,13 @@
 {
-  "name": "restaurantlist",
+  "name": "restaurantist",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "seed":"npx sequelize db:seed:all"
+    "test": "standard && node app.js",
+    "seed": "npx sequelize db:seed:all"
   },
   "keywords": [],
   "author": "",
