@@ -9,10 +9,19 @@ const { Op } = require('sequelize'); // sequelize Operators
 
 router.get('/', (req, res, next) => {
   const keyword = req.query.keyword?.trim();
+  const page = parseInt(req.query.page) || 1;
+  const limit = 8;
+
   return Restaurant.findAll({
+    offset: (page - 1) * limit, limit,
     raw: true,
     where: { name: { [Op.substring]: keyword ? keyword : '' } },
-  }).then((item) => res.render('index', { restaurants: item, keyword }))
+  }).then((item) => res.render('index', {
+    restaurants: item, keyword,
+    prev: page - 1,
+    next: page + 1,
+    page,
+  }))
     .catch((error) => {
       error.errorMessage = '資料讀取失敗'
       next(error)

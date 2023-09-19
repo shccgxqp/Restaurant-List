@@ -25,6 +25,8 @@
   </div>
 </div>
 {{> message}}
+
+
 <!-- restaurant list -->
 <div class='container mt-5'>
   <div class='row'>
@@ -80,3 +82,17 @@
     </div>
   </div>
 </div>
+
+<nav aria-label="...">
+  <ul class="pagination justify-content-center">
+    <li class="page-item {{#if prev}}{{else}}disabled {{/if}}">
+      <a class="page-link" href="/restaurant/?page={{prev}}">{{prev}}</a>
+    </li>
+    <li class="page-item active" aria-current="page">
+      <a class="page-link" href="/restaurant/?page={{page}}">{{page}}</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="/restaurant/?page={{next}}">{{next}}</a>
+    </li>
+  </ul>
+</nav>
