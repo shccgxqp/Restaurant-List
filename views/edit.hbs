@@ -14,7 +14,7 @@
     <div class='input-group mb-3'>
       <label for='edit_category' class='input-group-text'>餐廳類別*</label>
       <select class='form-select' name='category' id='edit_category' required>
-        <option selected>{{restaurant.category}}</option>
+        <option selected value="" disabled hidden>選擇餐廳種類</option>
         <option value='日本料理'>日本料理</option>
         <option value='義式餐廳'>義式餐廳</option>
         <option value='中東料理'>中東料理</option>
@@ -72,3 +72,8 @@
     <a href='/restaurants'>back</a>
   </form>
 </div>
+
+<script>
+    const restCategory = document.getElementById("edit_category");
+    restCategory.value = '{{restaurant.category}}';
+</script>
