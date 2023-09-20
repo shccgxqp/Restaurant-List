@@ -19,13 +19,27 @@
                 class='fas fa-search'
               ></i></button>
           </div>
+          <div class="dropdown text-center">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+    排序類別
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li><a class="dropdown-item" href="/restaurant/?sortBy=1&{{#if keyword}}keyword={{keyword}}{{/if}}" data-value="1">A->Z</a></li>
+    <li><a class="dropdown-item" href="/restaurant/?sortBy=2&{{#if keyword}}keyword={{keyword}}{{/if}}" data-value="2">Z->A</a></li>
+    <li><a class="dropdown-item" href="/restaurant/?sortBy=3&{{#if keyword}}keyword={{keyword}}{{/if}}" data-value="3">類別</a></li>
+    <li><a class="dropdown-item" href="/restaurant/?sortBy=4&{{#if keyword}}keyword={{keyword}}{{/if}}" data-value="4">地區</a></li>
+  </ul>
+</div>
         </div>
       </form>
+      
     </div>
   </div>
+  
 </div>
-{{> message}}
 
+
+{{> message}}
 
 <!-- restaurant list -->
 <div class='container mt-5'>
@@ -86,13 +100,13 @@
 <nav aria-label="...">
   <ul class="pagination justify-content-center">
     <li class="page-item {{#if prev}}{{else}}disabled {{/if}}">
-      <a class="page-link" href="/restaurant/?page={{prev}}">{{prev}}</a>
+      <a class="page-link" href="/restaurant/?page={{prev}}{{#if sortBy}}&sortBy={{sortBy}}{{/if}}{{#if keyword}}&keyword={{keyword}}{{/if}}">{{prev}}</a>
     </li>
     <li class="page-item active" aria-current="page">
-      <a class="page-link" href="/restaurant/?page={{page}}">{{page}}</a>
+      <a class="page-link" href="/restaurant/?page={{page}}{{#if sortBy}}&sortBy={{sortBy}}{{/if}}{{#if keyword}}&keyword={{keyword}}{{/if}}">{{page}}</a>
     </li>
     <li class="page-item">
-      <a class="page-link" href="/restaurant/?page={{next}}">{{next}}</a>
+      <a class="page-link" href="/restaurant/?page={{next}}{{#if sortBy}}&sortBy={{sortBy}}{{/if}}{{#if keyword}}&keyword={{keyword}}{{/if}}">{{next}}</a>
     </li>
   </ul>
 </nav>

@@ -11,17 +11,34 @@ router.get('/', (req, res, next) => {
   const keyword = req.query.keyword?.trim();
   const page = parseInt(req.query.page) || 1;
   const limit = 8;
+  const sortBy = req.query.sortBy;
+
+  let sortCriteria = [];
+  if (sortBy === '1') {
+    sortCriteria = [['name', 'ASC']];
+  } else if (sortBy === '2') {
+    sortCriteria = [['name', 'DESC']];
+  } else if (sortBy === '3') {
+    sortCriteria = [['category', 'ASC']];
+  } else if (sortBy === '4') {
+    sortCriteria = [['location', 'ASC']];
+  }
 
   return Restaurant.findAll({
     offset: (page - 1) * limit, limit,
     raw: true,
     where: { name: { [Op.substring]: keyword ? keyword : '' } },
-  }).then((item) => res.render('index', {
-    restaurants: item, keyword,
-    prev: page - 1,
-    next: page + 1,
-    page,
-  }))
+    order: sortCriteria,
+  }).then((item) => {
+    res.render('index', {
+      restaurants: item,
+      keyword,
+      prev: page > 0 ? page - 1 : 0,
+      next: page + 1,
+      page,
+      sortBy
+    })
+  })
     .catch((error) => {
       error.errorMessage = '資料讀取失敗'
       next(error)
@@ -50,6 +67,35 @@ router.get('/:id/edit', (req, res, next) => {
     error.errorMessage = '資料讀取失敗'
     next(error)
   });
+});
+
+router.post('/sort', (req, res, next) => {
+  const sortBy = req.body.sortBy; // 從下拉式選單獲取排序類別
+  console.log(req.body)
+
+  // 在這裡根據排序類別來編寫排序邏輯
+
+
+  return Restaurant.findAll({
+    offset: (page - 1) * limit,
+    limit,
+    raw: true,
+    where: { name: { [Op.substring]: keyword ? keyword : '' } },
+    order: sortCriteria, // 使用排序標準排序數據
+  })
+    .then((item) => {
+      res.render('index', {
+        restaurants: item,
+        keyword,
+        prev: page > 0 ? page - 1 : 0,
+        next: page + 1,
+        page,
+      });
+    })
+    .catch((error) => {
+      error.errorMessage = '資料讀取失敗';
+      next(error);
+    });
 });
 
 router.post('/', (req, res, next) => {
