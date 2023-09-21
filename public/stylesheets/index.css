@@ -78,6 +78,10 @@ header {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.wider-input {
+  width: 600px
+}
+
 @media screen and (max-width: 992px) {
 
   .card img {

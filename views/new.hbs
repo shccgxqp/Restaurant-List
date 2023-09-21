@@ -1,19 +1,20 @@
-
-<div class='d-flex justify-content-center'>
+<div class='d-flex justify-content-center' style='max-width: 600px; margin: 0 auto;'>
   <form action='/restaurant' method='POST'>
 
-    <div class='input-group mb-3'>
-      <label for='edit_name' class='input-group-text'>餐廳名稱*</label>
-      <input type='name' name='name' id='edit_name' placeholder='實在好好吃餐廳' required />
+    <div class=' mb-3'>
+      <label for='edit_name' class='form-label'>餐廳名稱*</label>
+      <input type='name' name='name' class='form-control wider-input' id='edit_name' value='{{restaurant.name}} '
+        required />
     </div>
 
-    <div class='input-group mb-3'>
-      <label for='edit_name_en' class='input-group-text'>餐廳英文名稱*</label>
-      <input type='name' name='name_en' id='edit_name_en' placeholder='gooooooood food' required />
+    <div class=' mb-3'>
+      <label for='edit_name_en' class='form-label'>餐廳英文名稱*</label>
+      <input type='name' name='name_en' class='form-control' id='edit_name_en' value='{{restaurant.name_en}}'
+        required />
     </div>
 
-    <div class='input-group mb-3'>
-      <label for='edit_category' class='input-group-text'>餐廳類別*</label>
+    <div class=' mb-3'>
+      <label for='edit_category' class='form-label'>餐廳類別*</label>
       <select class='form-select' name='category' id='edit_category' required>
         <option selected value="" disabled hidden>選擇餐廳種類</option>
         <option value='日本料理'>日本料理</option>
@@ -25,51 +26,41 @@
       </select>
     </div>
 
-    <div class='input-group mb-3'>
-      <label for='edit_image' class='input-group-text'>餐廳照片網址</label>
-      <input type='text' name='image' id='edit_image' placeholder='' />
+    <div class=' mb-3'>
+      <label for='edit_image' class='form-label'>餐廳照片網址</label>
+      <input type='text' name='image' class='form-control' id='edit_image' value='{{restaurant.image}}' />
     </div>
 
-    <div class='input-group mb-3'>
-      <label for='edit_location' class='input-group-text'>餐廳地點</label>
-      <input type='text' name='location' id='edit_location' placeholder='美國市台北區印度街1號2F' />
+    <div class=' mb-3'>
+      <label for='edit_location' class='form-label'>餐廳地點</label>
+      <input type='text' name='location' class='form-control' id='edit_location' value='{{restaurant.location}}' />
     </div>
 
-    <div class='input-group mb-3'>
-      <label for='edit_phone' class='input-group-text'>餐廳電話</label>
-      <input type='text' name='phone' id='edit_phone' placeholder='02 2701 2345' />
+    <div class=' mb-3'>
+      <label for='edit_phone' class='form-label'>餐廳電話</label>
+      <input type='text' name='phone' class='form-control' id='edit_phone' value='{{restaurant.phone}}' />
     </div>
 
-    <div class='input-group mb-3'>
-      <label for='edit_google_map' class='input-group-text'>Google_map</label>
-      <input type='text' name='google_map' id='edit_google_map' placeholder='我是誰 我在哪' />
+    <div class=' mb-3'>
+      <label for='edit_google_map' class='form-label'>Google_map</label>
+      <input type='text' name='google_map' class='form-control' id='edit_google_map'
+        value='{{restaurant.google_map}}' />
     </div>
 
-    <div class='input-group mb-3'>
-      <label for='edit_rating' class='input-group-text'>餐廳評分</label>
-      <input
-        type='number'
-        name='rating'
-        id='edit_rating'
-        placeholder='4.5'
-        min='0'
-        max='5'
-        step='0.1'
-      />
+    <div class='mb-3'>
+      <label for='edit_rating' class='form-label'>餐廳評分</label>
+      <input type='number' name='rating' class='form-control' id='edit_rating' value='{{restaurant.rating}}' min='0'
+        max='5' step='0.1' />
     </div>
 
-    <div class='input-group'>
-      <label for='edit_description' class='input-group-text'>餐廳簡介</label>
-      <textarea
-        type='text'
-        name='description'
-        id='edit_description'
-        style='height: 150px'
-      ></textarea>
+    <div class='mb-3'>
+      <label for='edit_description' class='form-label'>餐廳簡介</label>
+      <textarea type='text' name='description' class='form-control' id='edit_description'
+        style='height: 100px'>{{restaurant.description}}</textarea>
     </div>
 
-    <button type='submit'>Save</button>
+    <button type='submit' class='btn btn-primary'>Save</button>
 
-    <a href='/restaurant'>back</a>
+    <a href='/restaurant' class='btn btn-secondary'>back</a>
   </form>
 </div>

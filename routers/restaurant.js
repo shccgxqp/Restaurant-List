@@ -9,9 +9,9 @@ const { Op } = require('sequelize'); // sequelize Operators
 
 router.get('/', (req, res, next) => {
   const keyword = req.query.keyword?.trim();
+  const sortBy = req.query.sortBy;
   const page = parseInt(req.query.page) || 1;
   const limit = 8;
-  const sortBy = req.query.sortBy;
 
   let sortCriteria = [];
   if (sortBy === '1') {

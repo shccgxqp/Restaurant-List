@@ -26,13 +26,20 @@ A web app that you can find some restaurants and search them with keywords.
    $ npm install
    ```
 
-4. Install the sql seed
+4. create database in mysql
 
    ```bash
+   CREATE DATABASE restaurant;
+   ```
+
+5. Install the sql migration & seed
+
+   ```bash
+   $ npm run migrate
    $ npm run seed
    ```
 
-5. Start the web app
+6. Start the web app
 
    ```bash
    $ npm run start
