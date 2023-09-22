@@ -29,7 +29,7 @@ A web app that you can find some restaurants and search them with keywords.
 4. create database in mysql
 
    ```bash
-   CREATE DATABASE restaurant;
+   CREATE DATABASE restaurant_list;
    ```
 
 5. Install the sql migration & seed
