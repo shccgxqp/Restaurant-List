@@ -1,11 +1,13 @@
 //  express
 const express = require('express');
-const passport = require('passport')
+const passport = require('./config/passport')
+
+const flash = require('connect-flash');
+const session = require('express-session');
+
 if (process.env.NODE_ENV === 'development') {
   require('dotenv').config()
 }
-const flash = require('connect-flash');
-const session = require('express-session');
 const app = express();
 const { engine } = require('express-handlebars');
 const port = 3000;
@@ -35,7 +37,10 @@ app.use(
 );
 
 app.use(flash());
-app.use(passport.initialize())
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(messageHandler)
 app.use(router);
 app.use(errorHandler);

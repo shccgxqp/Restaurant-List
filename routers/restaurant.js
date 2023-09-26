@@ -12,6 +12,8 @@ router.get('/', (req, res, next) => {
   const sortBy = req.query.sortBy;
   const page = parseInt(req.query.page) || 1;
   const limit = 8;
+  const favorite = req.user.favorite ? req.user.favorite.split(' ') : [0];
+
 
   let sortCriteria = [];
   if (sortBy === '1') {
@@ -27,7 +29,7 @@ router.get('/', (req, res, next) => {
   return Restaurant.findAll({
     offset: (page - 1) * limit, limit,
     raw: true,
-    where: { name: { [Op.substring]: keyword ? keyword : '' } },
+    where: { name: { [Op.substring]: keyword ? keyword : '' }, id: { [Op.or]: favorite } },
     order: sortCriteria,
   }).then((item) => {
     res.render('index', {

@@ -15,19 +15,20 @@
   <nav class="navbar navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="/">
-        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png" width="30"
-          height="30" class="d-inline-block align-top" alt="我的餐廳清單">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png"
+          width="30" height="30" class="d-inline-block align-top" alt="我的餐廳清單">
         我的餐廳清單
       </a>
+      {{> navbar}}
       <div class="p-3 mb-2 bg-success bg-opacity-20 rounded-pill">
-          <a href='/restaurant/new' class="text-white" style="text-decoration:none;">
-            <i class="fa-solid fa-plus"></i>
-            <span>新增餐廳</span>
-          </a>
+        <a href='/restaurant/new' class="text-white" style="text-decoration:none;">
+          <i class="fa-solid fa-plus"></i>
+          <span>新增餐廳</span>
+        </a>
       </div>
     </div>
   </nav>
-  
+
   <div class="banner"></div>
   {{{ body }}}
   <script src="/javascripts/bootstrap.bundle.min.js"></script>
