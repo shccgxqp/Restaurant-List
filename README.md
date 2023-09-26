@@ -1,6 +1,7 @@
 # Restaurant List
 
-![Restaurant home page](./public/image/restaurant_screen.jpeg)
+![Restaurant home page](./public/image/restaurant_screen1.jpeg)
+![Restaurant home page](./public/image/restaurant_screen2.jpeg)
 
 A web app that you can find some restaurants and search them with keywords.
 
@@ -17,7 +18,7 @@ A web app that you can find some restaurants and search them with keywords.
 2. Go to the project directory
 
    ```bash
-   $ cd RestaurantList
+   $ cd Restaurant-List
    ```
 
 3. Install the required npm packages
@@ -39,8 +40,19 @@ A web app that you can find some restaurants and search them with keywords.
    $ npm run seed
    ```
 
-6. Start the web app
+6. reference .env.example  create facebook app settings
+   https://developers.facebook.com/?locale=zh_TW
+
+   ```bash
+   FACEBOOK_CLIENT_ID= enter CLIENT_ID
+   FACEBOOK_CLIENT_SECRET= enter CLIENT_SECRET
+   ```
+
+7. Start the web app
 
    ```bash
    $ npm run start
+   $ npm run dev
    ```
+
+
