@@ -10,7 +10,7 @@ const User = db.User
 
 passport.use(new LocalStrategy({ usernameField: 'email' }, (username, password, done) => {
   return User.findOne({
-    attributes: ['id', 'name', 'email', 'password', 'favorite'],
+    attributes: ['id', 'name', 'email', 'password'],
     where: { email: username },
     raw: true
   })
@@ -42,7 +42,7 @@ passport.use(new FacebookStrategy({
   const name = profile.displayName
 
   return User.findOne({
-    attributes: ['id', 'name', 'email', 'favorite'],
+    attributes: ['id', 'name', 'email'],
     where: { email },
     raw: true
   })
@@ -53,7 +53,7 @@ passport.use(new FacebookStrategy({
 
       return bcrypt.hash(randomPwd, 10)
         .then((hash) => User.create({ name, email, password: hash }))
-        .then((user) => done(null, { id: user.id, name: user.name, email: user.email, favorite: user.favorite }))
+        .then((user) => done(null, { id: user.id, name: user.name, email: user.email }))
     })
     .catch((error) => {
       error.errorMessage = '登入失敗'
@@ -63,12 +63,12 @@ passport.use(new FacebookStrategy({
 
 
 passport.serializeUser((user, done) => {
-  const { id, name, email, favorite } = user
-  return done(null, { id, name, email, favorite })
+  const { id, name, email } = user
+  return done(null, { id, name, email })
 })
 
 passport.deserializeUser((user, done) => {
-  done(null, { id: user.id, name: user.name, favorite: user.favorite })
+  done(null, { id: user.id })
 })
 
 

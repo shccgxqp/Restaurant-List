@@ -15,6 +15,7 @@ module.exports = {
         phone: itme.phone,
         google_map: itme.google_map,
         rating: itme.rating,
+        userId: itme.userId,
         description: itme.description,
         createdAt: new Date(),
         updatedAt: new Date(),

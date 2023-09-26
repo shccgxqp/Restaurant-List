@@ -11,7 +11,6 @@ module.exports = {
         name: 'user1',
         email: 'user1@example.com',
         password: hash,
-        favorite: '1 2 3',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -19,7 +18,6 @@ module.exports = {
         name: 'user2',
         email: 'user2@example.com',
         password: hash,
-        favorite: '4 5 6',
         createdAt: new Date(),
         updatedAt: new Date()
       }

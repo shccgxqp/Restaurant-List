@@ -12,7 +12,7 @@ router.get('/', (req, res, next) => {
   const sortBy = req.query.sortBy;
   const page = parseInt(req.query.page) || 1;
   const limit = 8;
-  const favorite = req.user.favorite ? req.user.favorite.split(' ') : [0];
+  const userId = req.user.id
 
 
   let sortCriteria = [];
@@ -29,7 +29,7 @@ router.get('/', (req, res, next) => {
   return Restaurant.findAll({
     offset: (page - 1) * limit, limit,
     raw: true,
-    where: { name: { [Op.substring]: keyword ? keyword : '' }, id: { [Op.or]: favorite } },
+    where: { name: { [Op.substring]: keyword ? keyword : '' }, userId: { [Op.substring]: userId } },
     order: sortCriteria,
   }).then((item) => {
     res.render('index', {
@@ -73,6 +73,9 @@ router.get('/:id/edit', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   const body = req.body;
+  const userId = req.user.id
+  console.log('post new:', userId)
+
   return Restaurant.create({
     name: body.name,
     name_en: body.name_en,
@@ -80,6 +83,7 @@ router.post('/', (req, res, next) => {
     image: body.image,
     location: body.location,
     phone: body.phone,
+    userId: userId,
     google_map: body.google_map,
     rating: body.rating,
     description: body.description,
