@@ -1,7 +1,7 @@
 # Restaurant List
 
-![Restaurant home page](./public/image/restaurant_screen1.jpeg)
-![Restaurant home page](./public/image/restaurant_screen2.jpeg)
+![Restaurant home page](./public/image/restaurant_screen1.jpg)
+![Restaurant home page](./public/image/restaurant_screen2.jpg)
 
 A web app that you can find some restaurants and search them with keywords.
 
