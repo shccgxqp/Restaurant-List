@@ -25,7 +25,8 @@ router.post('/', (req, res, next) => {
         return
       }
 
-      return bcrypt.hash(password, 10).then((user) => User.create({ email, name, password }))
+      return bcrypt.hash(password, 10)
+        .then((user) => User.create({ email, name, password: user }))
     })
     .then((user) => {
       if (!user) {
