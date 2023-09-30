@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     favorite: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'User',
+    modelName: 'user',
     tableName: 'users'
   });
   return User;
