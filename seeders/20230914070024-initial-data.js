@@ -5,18 +5,18 @@ const restaurants = require("../public/jsons/restaurant.json").results;
 module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.bulkInsert(
-      "restaurants",
-      Object.values(restaurants).map((itme) => ({
-        name: itme.name,
-        name_en: itme.name_en,
-        category: itme.category,
-        image: itme.image,
-        location: itme.location,
-        phone: itme.phone,
-        google_map: itme.google_map,
-        rating: itme.rating,
-        userId: itme.userId,
-        description: itme.description,
+      "Restaurants",
+      Object.values(restaurants).map((item) => ({
+        name: item.name,
+        name_en: item.name_en,
+        category: item.category,
+        image: item.image,
+        location: item.location,
+        phone: item.phone,
+        google_map: item.google_map,
+        rating: item.rating,
+        userId: item.userId,
+        description: item.description,
         createdAt: new Date(),
         updatedAt: new Date(),
       }))
@@ -24,6 +24,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete("restaurants", null);
+    await queryInterface.bulkDelete("Restaurants", null);
   },
 };
